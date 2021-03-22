@@ -39,13 +39,17 @@ def graph_builder(files: str):
 def graph_append(graph: dict, names: list):
     for name in names:
         if name not in graph:
+            # как было
             graph[name] = names
+            # как буд делать
+            # graph[name] = names
         else:
-            a = graph[name].copy()
-            a.extend(names)
-            graph[name] = a
+            # костыль, которым решалась проблема
+            # a = graph[name].copy()
+            # a.extend(names)
+            # graph[name] = a
             print(type(graph[name]))
-            # graph[name].extend(names) # а чо не работает?
+            graph[name].extend(names) # а чо не работает?
     return graph
 
 
